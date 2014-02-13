@@ -1,6 +1,22 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+<h:form id="processFormReportExcel">
+<t:panelGrid border="0" style="width:100%;text-align:center" >
+	<h:panelGroup>
+		<h:commandButton  
+			id="export" 
+            value="EXPORT"
+            style="border:0"
+            status="false"
+            actionListener="#{exampleBeanWeb.reportExcel}"
+			reRender="panelReportExcel">
+        </h:commandButton>
+	</h:panelGroup>
+	<t:panelGrid border="0" width="100%" style="text-align:left;float:left;">
+		<t:outputLabel>Message Report</t:outputLabel>
+	 	<t:panelGroup colspan="11" id="panelReportExcel" style="border:2px solid;">
+			<rich:messages 	for="processFormReportExcel" 
+			    style="width:100%;text-align:left;"
+			    layout="table" tooltip="true" showDetail="false" showSummary="true" 
+				infoLabelClass="infoClass" warnLabelClass="warnClass" errorLabelClass="errorClass">
+			</rich:messages>
+		</t:panelGroup>	
+</t:panelGrid>
